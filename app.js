@@ -3,6 +3,7 @@ const fs = require('fs');
 const os = require ('os');
 const notes = require('./notes');
 const _ = require('lodash');
+const yargs = require('yargs');
 
 
 var user = os.userInfo();
@@ -12,7 +13,11 @@ console.log(res);
 // add function
 var z = notes.add;
 console.log(z(1,9));
-
+ 
+// yargs
+console.log(yargs.argv);
+// yargs by name
+console.log(`title: ${yargs.argv.title} body : ${yargs.argv.body}`)
 // filtering an array
 var filteredArray = _.uniq(['Gary', 1, 'Gary', 1, 2, 3, 4,9,8,39,35,39]);
 console.log(filteredArray);
