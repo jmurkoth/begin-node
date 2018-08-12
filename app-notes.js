@@ -23,6 +23,11 @@ switch(yargs.argv._[0])
             console.log(`no matching note found`);
         }
         break;
+    case "list":
+      var allNotes =fwrite.getAll();
+      console.log(`Printing ${allNotes.length} note(s).`);
+      allNotes.forEach((note) => fwrite.logNote(note));
+      break;
      default:
         console.log('unknown command');
         break;

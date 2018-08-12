@@ -74,7 +74,16 @@ var logNote =(note)=>{
         console.log(`------------------`);
     }
 
-}
+};
+
+// get all the notes
+
+var getAll=()=>{
+    console.log(`getting all the notes`);
+    var notes = fetchNotes();
+    return notes;
+};
+
 //add the note
 var addNote = (title,body)=>{
     console.log(`Adding the note`);
@@ -100,5 +109,6 @@ var addNote = (title,body)=>{
     addNote,
     removeNote,
     readNote,
-    logNote
+    logNote,
+    getAll
   }
