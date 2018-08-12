@@ -4,7 +4,7 @@ const os = require ('os');
 const notes = require('./notes');
 const _ = require('lodash');
 const yargs = require('yargs');
-
+const fwrite = require('./notesjson');
 
 var user = os.userInfo();
 
@@ -21,7 +21,8 @@ console.log(`title: ${yargs.argv.title} body : ${yargs.argv.body}`)
 // filtering an array
 var filteredArray = _.uniq(['Gary', 1, 'Gary', 1, 2, 3, 4,9,8,39,35,39]);
 console.log(filteredArray);
-
+//file manipulation
+fwrite.addNote('My First Note','This is a test for the note');
 // reading from cmd line
 var arg= process.argv[2];
 console.log('Command: ',arg);
