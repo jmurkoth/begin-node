@@ -1,7 +1,25 @@
 console.log('Notes Application starting');
-const yargs = require('yargs');
 const fwrite = require('./notesjson');
-
+// declare the options
+const titleOptions = {
+    describe: 'Title of note',
+    demand: true,
+    alias: 't'
+  };
+const yargs = require('yargs').command('add','Add a new note',{
+    title: titleOptions,
+    body:{
+        describe: 'Body of note', 
+        demand: true,
+        alias: 'b'
+    }
+ })
+ .command('list','List all the notes')
+ .command('remove','remove the note',{
+    title: titleOptions
+ })
+ .help();
+       
 
 switch(yargs.argv._[0])
 {
